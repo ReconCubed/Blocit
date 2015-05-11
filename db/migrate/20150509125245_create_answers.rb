@@ -1,9 +1,9 @@
 class CreateAnswers < ActiveRecord::Migration
   def change
     create_table :answers do |t|
+      t.references :questions
       t.text :body
       t.references :question, index: true
-      belongs_to :question
       t.timestamps
     end
   end

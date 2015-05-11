@@ -4,7 +4,6 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.boolean :resolved
-      has_many :answers
       t.timestamps
     end
   end

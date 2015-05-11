@@ -5,3 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+#Create 50 posts
+50.times do
+    Post.create!(
+        title: Faker::Hacker.abbreviation,
+        body: Faker::Hacker.say_something_smart
+        )
+    end
+    posts = Post.all
+    
+#Create 100 comments
+100.times do
+    Comment.create!(
+        post: posts.sample,
+        body: Faker::Hacker.say_something_smart
+        )
+    end
+    
+    puts "Seed finished"
+    puts "#{Post.count} posts created"
+    puts "#{Comment.count} comments created"
+    
+    

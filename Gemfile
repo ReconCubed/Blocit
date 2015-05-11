@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
-
+#Faker
+gem 'faker'
+#Pry rails
+gem 'pry-rails'
 #Bootstrap
 gem 'bootstrap-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
