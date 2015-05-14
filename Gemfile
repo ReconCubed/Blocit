@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#Devise
+gem 'devise'
 #Faker
 gem 'faker'
 #Pry rails
