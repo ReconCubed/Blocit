@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#Figero
+gem 'figaro', '1.0'
 #Devise
 gem 'devise'
 #Faker
