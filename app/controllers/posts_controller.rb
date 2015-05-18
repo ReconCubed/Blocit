@@ -34,5 +34,6 @@ class PostsController < ApplicationController
     else 
       flash[:error] = "There was an error updating this post. Please try again."
       render :edit
+    end
   end
 end
