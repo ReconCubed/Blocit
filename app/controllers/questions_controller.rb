@@ -1,4 +1,4 @@
-class QuestionController < ApplicationController
+class QuestionsController < ApplicationController
   def index
     @questions = Question.all
   end
@@ -20,7 +20,7 @@ class QuestionController < ApplicationController
   end
 
   def show
-    @questions = Question.find(params[:id])
+    @question = Question.find(params[:id])
   end
 
   def edit
