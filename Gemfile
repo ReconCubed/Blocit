@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'figaro', '1.0'
 #Devise
 gem 'devise'
+#Pundit
+gem 'pundit'
 #Faker
 gem 'faker'
 #Pry rails
