@@ -5,6 +5,8 @@ gem 'figaro', '1.0'
 gem 'devise'
 #Pundit
 gem 'pundit'
+#RedCarpet
+gem 'redcarpet'
 #Faker
 gem 'faker'
 #Pry rails
