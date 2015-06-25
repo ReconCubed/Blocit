@@ -20,6 +20,13 @@ require 'faker'
 
     end
 users = User.all
+15.times do
+ Topic.create!(
+    name:         Faker::Lorem.sentence,
+    description:  Faker::Lorem.paragraph
+ )
+end
+topics = Topic.all
 #Create 50 posts
 50.times do
     Post.create!(
@@ -48,7 +55,7 @@ users = User.all
 # Create an admin user
 admin = User.new(
   name:     'Admin User',
-  email:    'admin@example.com',
+  email:    'admin@exampl.com',
   password: 'helloworld',
   role:     'admin'
 )
@@ -74,10 +81,3 @@ member = User.new(
 member.skip_confirmation!
 member.save!
  
-15.times do
- Topic.create!(
-    name:         Faker::Lorem.sentence,
-    description:  Faker::Lorem.paragraph
- )
-end
-topics = Topic.all
