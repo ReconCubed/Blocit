@@ -49,13 +49,13 @@ topics = Topic.all
     puts "#{Post.count} posts created"
     puts "#{Comment.count} comments created"
     puts "#{User.count} users created"
-    
+    puts "#{Topic.count} topics created"
 
 
 # Create an admin user
 admin = User.new(
   name:     'Admin User',
-  email:    'admin@exampl.com',
+  email:    'admin@example.com',
   password: 'helloworld',
   role:     'admin'
 )

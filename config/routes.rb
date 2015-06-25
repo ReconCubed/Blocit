@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'topics/edit'
 
   devise_for :users
+  resources :users, only: [:update]
   resources :questions
   resources :advertisements
   resources :topics do
