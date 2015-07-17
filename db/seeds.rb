@@ -32,7 +32,7 @@ topics = Topic.all
     Post.create!(
         user: users.sample,
         topic: topics.sample,
-        title: Faker::Hacker.abbreviation,
+        title: Faker::Lorem.sentence,
         body: Faker::Hacker.say_something_smart
         )
     end
@@ -80,4 +80,5 @@ member = User.new(
 )
 member.skip_confirmation!
 member.save!
+ 
  
