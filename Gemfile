@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+#Will paginate
+gem 'will_paginate','~> 3.0.5'
 #Fog
 gem 'fog'
 #Figaro

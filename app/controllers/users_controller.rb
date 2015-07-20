@@ -11,9 +11,9 @@
      end
    end
  
-   private
+  private
  
-   def user_params
-     params.require(:user).permit(:name, :avatar)
-   end
- end
+  def user_params
+    params.require(:user).permit(:name, :avatar, :avatar_cache)
+  end
+end
