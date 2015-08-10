@@ -40,6 +40,7 @@ topics = Topic.all
 #Create 100 comments
 100.times do
     Comment.create!(
+        user: users.sample,
         post: posts.sample,
         body: Faker::Hacker.say_something_smart
         )
