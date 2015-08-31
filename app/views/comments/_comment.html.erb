@@ -1,10 +1,12 @@
 <div class="media">
   <div class="media-left">
-    <%= image_tag(comment.user.avatar.small.url, class: "media-object") if comment.user.avatar? %>
+    <%= image_tag(comment.user.avatar.small.url, class: "media-object") if comment.user.present? %>
   </div>
   <div class="media-body">
     <small>
-      <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
+      <% if comment.user.present? %>
+        <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
+      <% end %>
       <%# if policy(comment).destroy? %>
         | <%#= link_to "Delete", [@topic, @post, comment], method: :delete %>
       <%# end %>
