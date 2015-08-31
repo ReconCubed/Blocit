@@ -12,7 +12,7 @@
     <p><%= markdown_to_html @post.body %></p>
 
     <% @comments.each do |comment| %>
-      <%= comment.body %></p>
+     <%= comment.body %></p>
     <% end %>
     <% if policy(@comment).create? %>
     <%= render partial: 'comments/form', locals: {post: @post, comment: @comment} %>
