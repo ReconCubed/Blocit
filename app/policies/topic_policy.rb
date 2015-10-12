@@ -11,4 +11,7 @@ class TopicPolicy < ApplicationPolicy
   def update?
     create?
   end
+  def destroy
+    user.admin?
+  end
 end
