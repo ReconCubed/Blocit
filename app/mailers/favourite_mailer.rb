@@ -8,7 +8,7 @@ class FavouriteMailer < ActionMailer::Base
       @user = user
       @post = post
       @comment = comment
-      mail(to: user.email, subject: "New comment on #{post.title")
+      mail(to: user.email, subject: "New comment on #{post.title}")
   end
   
     
