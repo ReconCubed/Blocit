@@ -14,4 +14,7 @@ class TopicPolicy < ApplicationPolicy
   def destroy
     user.admin?
   end
+  def show?
+    record.public? || user.present?
+  end
 end

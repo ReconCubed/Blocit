@@ -12,7 +12,7 @@ require 'rails_helper'
       @other_user = authenticated_user
       @comment = Comment.new(body: 'My comment is really great', post: @post, user: @other_user)
     end
- 
+    context "with user's permission" do
     it "sends an email to users who have favorited the post" do
       favorite = @user.favorites.create(post: @post)
  
@@ -33,5 +33,6 @@ require 'rails_helper'
  
       @comment.save
     end
+    
   end
 end
