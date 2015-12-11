@@ -8,16 +8,20 @@ class User < ActiveRecord::Base
   has_many :votes
   has_many :favourites
   mount_uploader :avatar, AvatarUploader
+
   def admin?
     role == 'admin'
   end
+
   def mod?
     role == 'mod'
   end
+
   def favourited(post)
     favourites.where(post_id: post.id).first
   end
+
   def voted(post)
-    # TBA #
+    votes.where(post_id: post.id).first
   end
 end
