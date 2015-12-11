@@ -2,9 +2,25 @@ require 'rails_helper'
  
  describe Post do
    describe "vote methods" do
- 
+      def authenticated_user(options={})
+       user_options = {email: "email#{rand}@dc.com", password: 'password'}.merge(options)
+       user = User.new(user_options)
+       user.skip_confirmation!
+       user.save
+       user
+      end
+      def associated_post(options={})
+       post_options = {
+        title: 'post title',
+        body: 'post bodies have to be atleast 50 chars',
+        topic: Topic.create(name: 'Topic name'),
+        user: authenticated_user
+        
+       }.merge(options)
+       Post.create(post_options)
+      end
      before do
-       @post = Post.create(title: 'post title', body: 'post bodhfhfhfghfhfhffhfhfffdsfdfsfsfsfsy')
+       @post = associated_post
        3.times { @post.votes.create(value: 1) }
        2.times { @post.votes.create(value: -1) }
      end
@@ -25,6 +41,14 @@ require 'rails_helper'
        it "returns the sum of all down and up votes" do
          expect( @post.points ).to eq(1) # 3 - 2
        end
+     end
+     describe '#create_vote' do
+      it "gnerates an up-vote when explicitly called" do
+       post = associated_post
+       expect( post.up_votes ).to eq(0)
+       post.create_vote
+       expect( post.up_votes ).to eq(1) 
+      end
      end
    end
  end
