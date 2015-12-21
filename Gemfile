@@ -16,6 +16,7 @@ gem 'redcarpet'
 gem 'faker'
 #Pry rails
 gem 'pry-rails'
+gem 'capybara'
 #Bootstrap
 gem 'bootstrap-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

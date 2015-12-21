@@ -4,8 +4,9 @@ class Post < ActiveRecord::Base
     belongs_to :user
     belongs_to :topic
     default_scope { order('rank DESC') }
-    scope :order_by_title, -> {order(:title)}
-    scope :order_by_reverse_created_at, -> {order('created_at DESC')}
+        scope :visible_to, -> (user) {user ? all : joins(:topic).where('topics.public' => true)}
+        scope :order_by_title, -> {order(:title)}
+        scope :order_by_reverse_created_at, -> {order('created_at DESC')}
     
     validates :title, length: { minimum: 5 }, presence: true
     validates :body, length: { minimum: 20 }, presence: true
