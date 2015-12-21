@@ -1,4 +1,4 @@
-requires 'rails_helper'
+require 'rails_helper'
  describe VotesController do
  
    include TestFactories
