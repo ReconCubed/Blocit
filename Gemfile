@@ -17,6 +17,7 @@ gem 'faker'
 #Pry rails
 gem 'pry-rails'
 gem 'capybara'
+gem 'factory_girl_rails', '~> 4.0'
 #Bootstrap
 gem 'bootstrap-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
